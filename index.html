@@ -1,37 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cash Web Studio</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-
-    <title>Cash Web Studio | Web Design & Development</title>
-    <meta property="og:title" content="Cash Web Studio | Web Design & Development">
-    <meta property="og:description" content="NC-based software engineer and freelance web designer specializing in modern, responsive websites.">
-    <meta property="og:image" content="https://cashwebstudio.com/logo.jpg"> <!--I need to change this to be the right size-->
-    <meta property="og:url" content="https://cashwebstudio.com">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cash Web Studio designs and develops custom websites for founders, small businesses, and growing brands.">
+  <title>Cash Web Studio | Web Design & Development</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <a href="#home" class="logo">
-            Cash Web Studio
-        </a>
-        
-        <i class="bx bx-menu" id="menu-icon"></i>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Cash Web Studio home">
+      <img src="assets/logo-horizontal-black.svg" alt="Cash Web Studio">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#consultation">Consultation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Web design and development studio</p>
+        <h1>Strategic websites for brands ready to look sharp and work smarter.</h1>
+        <p class="hero-text">
+          Cash Web Studio builds modern, responsive websites with thoughtful design,
+          clean development, and the technical polish needed to help your business grow online.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#consultation">Schedule a Consultation</a>
+          <a class="button button-light" href="#services">View Services</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Cash Web Studio service highlights">
+        <img src="assets/logo-stacked-white.svg" alt="Cash Web Studio" class="hero-logo">
+        <div class="metric-grid">
+          <div>
+            <strong>Design</strong>
+            <span>Clean, brand-aligned interfaces</span>
+          </div>
+          <div>
+            <strong>Build</strong>
+            <span>Responsive, performant websites</span>
+          </div>
+          <div>
+            <strong>Grow</strong>
+            <span>SEO, AEO, and GEO visibility</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <section class="intro-band" aria-label="Studio promise">
+      <p>For entrepreneurs, small businesses, service providers, and personal brands who need a website that feels credible, clear, and easy to maintain.</p>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">About the founder</p>
+        <h2>Meet Camille Cash</h2>
+      </div>
+      <div class="about-layout">
+        <div class="portrait-wrap">
+          <img src="assets/camille-cash.jpg" alt="Camille Cash, founder of Cash Web Studio">
+        </div>
+        <div class="about-copy">
+          <p>
+            Camille Cash is a North Carolina-based software engineer and web developer who brings together technical depth,
+            thoughtful design, and practical business sense. Her background spans healthcare, biotech, telecommunications,
+            and enterprise software, giving her a systems-minded approach to every website she builds.
+          </p>
+          <p>
+            Through Cash Web Studio, Camille helps founders and small businesses turn ideas into polished online experiences:
+            websites that are easy to navigate, easy to update, and built to support real goals.
+          </p>
+          <div class="about-points" aria-label="Founder strengths">
+            <span>Software engineering background</span>
+            <span>Modern web design</span>
+            <span>Small business focus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">Services</p>
+        <h2>Website support from first concept to long-term growth.</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">WD</div>
+          <h3>Web Design</h3>
+          <p>Clean, modern website designs tailored to your brand and goals.</p>
+          <ul>
+            <li>Custom website design</li>
+            <li>Mobile-responsive layouts</li>
+            <li>Modern UI/UX</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">DEV</div>
+          <h3>Website Development</h3>
+          <p>Custom websites built with modern technologies and optimized for performance.</p>
+          <ul>
+            <li>Portfolio websites</li>
+            <li>Small business websites</li>
+            <li>Landing pages</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">CARE</div>
+          <h3>Website Maintenance</h3>
+          <p>Ongoing support to keep your website secure, up to date, and running smoothly.</p>
+          <ul>
+            <li>Content updates</li>
+            <li>Performance improvements</li>
+            <li>Bug fixes and enhancements</li>
+          </ul>
+        </article>
+        <article class="service-card featured-card">
+          <div class="service-icon" aria-hidden="true">AI</div>
+          <h3>SEO, AEO & GEO</h3>
+          <p>Visibility strategy for search engines, answer engines, and generative AI discovery.</p>
+          <ul>
+            <li>Technical and on-page SEO</li>
+            <li>Answer engine optimization</li>
+            <li>Generative engine optimization</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section consultation-section" id="consultation">
+      <div class="consultation-layout">
+        <div class="consultation-copy">
+          <div class="section-heading">
+            <p class="eyebrow">Consultation</p>
+            <h2>Let’s talk through your website goals.</h2>
+          </div>
+          <p>
+            Book a consultation to discuss your brand, your audience, your timeline, and the kind of site that will best support your next move.
+          </p>
+          <a class="button button-dark" href="mailto:camille@cashwebstudio.com?subject=Cash%20Web%20Studio%20Consultation">Schedule by Email</a>
+        </div>
+        <div class="calendar-card">
+          <div class="calendar-placeholder">
+            <img src="assets/favicon.svg" alt="" aria-hidden="true">
+            <h3>Google Calendar Appointment Schedule</h3>
+            <p>Replace this panel with your Google Workspace appointment schedule embed when your booking link is ready.</p>
+          </div>
+          <!-- Replace the placeholder above with your Google Calendar Appointment Scheduling iframe:
+          <iframe src="YOUR_GOOGLE_CALENDAR_APPOINTMENT_SCHEDULE_EMBED_URL" title="Schedule a consultation with Cash Web Studio"></iframe>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-layout">
+        <div class="contact-details">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2>Ready to build something polished?</h2>
+          </div>
+          <p>Send a note with a few details about your project, timeline, and goals.</p>
+          <a class="email-link" href="mailto:camille@cashwebstudio.com">camille@cashwebstudio.com</a>
+        </div>
+        <form class="contact-form" action="mailto:camille@cashwebstudio.com" method="post" enctype="text/plain">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Project Type
+            <select name="project_type" required>
+              <option value="">Select one</option>
+              <option>New website</option>
+              <option>Website redesign</option>
+              <option>Maintenance</option>
+              <option>SEO, AEO, or GEO</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="button button-dark" type="submit">Send Inquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/logo-horizontal-white.svg" alt="Cash Web Studio">
+    <p>Web design, development, and digital visibility by Cash Web Studio.</p>
+    <a href="mailto:camille@cashwebstudio.com">camille@cashwebstudio.com</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
