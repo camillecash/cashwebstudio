@@ -663,6 +663,9 @@ h1 {
 
   .about-text-stack {
     max-width: none;
+    border-right: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .hero-actions,
