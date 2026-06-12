@@ -60,6 +60,8 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(30, 28, 22, 0.16);
 }
 
 .site-nav a {
@@ -68,11 +70,13 @@ a {
   font-size: 0.94rem;
   font-weight: 700;
   text-decoration: none;
+  border-radius: 6px;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
   color: var(--primary-deep);
+  background: rgba(145, 179, 255, 0.16);
 }
 
 .nav-toggle {
@@ -81,8 +85,8 @@ a {
   height: 44px;
   place-items: center;
   border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--white);
+  border-radius: 999px;
+  background: rgba(255, 253, 250, 0.96);
   cursor: pointer;
 }
 
@@ -530,8 +534,37 @@ h1 {
   background: var(--ink);
 }
 
-.site-footer img {
-  width: min(260px, 80vw);
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-top img {
+  width: min(340px, 85vw);
+  margin-left: -20px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 10px 38px;
+  white-space: nowrap;
+  padding-right: 40px;
+}
+
+.footer-nav a {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--primary);
 }
 
 .site-footer p {
@@ -564,6 +597,19 @@ h1 {
   }
 }
 
+@media (max-width: 860px) {
+  .footer-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-nav {
+    order: -1;
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+}
+
 @media (max-width: 760px) {
   .site-header {
     min-height: 70px;
@@ -571,7 +617,7 @@ h1 {
   }
 
   .brand img {
-    width: clamp(220px, 66vw, 255px);
+    width: min(340px, 85vw);
   }
 
   .nav-toggle {
