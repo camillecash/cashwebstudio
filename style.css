@@ -86,8 +86,7 @@ a {
   height: 44px;
   place-items: center;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 253, 250, 0.96);
+  background: var(#d3d3d3);
   cursor: pointer;
 }
 
@@ -96,7 +95,7 @@ a {
   width: 20px;
   height: 2px;
   margin: 3px 0;
-  background: var(--ink);
+  background: var(--primary);
 }
 
 .hero {
