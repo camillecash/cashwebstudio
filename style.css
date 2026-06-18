@@ -433,6 +433,60 @@ h1 {
   background: var(--primary);
 }
 
+.faq-section {
+  background: var(--paper);
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+  max-width: 980px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(30, 28, 22, 0.07);
+}
+
+.faq-item summary {
+  position: relative;
+  padding: 20px 54px 20px 22px;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  width: 22px;
+  height: 22px;
+  color: var(--primary-dark);
+  font-size: 1.35rem;
+  line-height: 1;
+  transform: translateY(-50%);
+  content: "+";
+}
+
+.faq-item[open] summary::after {
+  content: "-";
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 22px 22px;
+  color: var(--muted);
+}
+
 .consultation-section {
   background: var(--paper);
 }
