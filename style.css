@@ -75,27 +75,41 @@ a {
 }
 
 .site-nav a:hover,
-.site-nav a:focus-visible {
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
   color: var(--primary-deep);
   background: rgba(145, 179, 255, 0.16);
 }
 
 .nav-toggle {
   display: none;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 34px;
   place-items: center;
-  border: 1px solid var(--line);
-  background: var(#d3d3d3);
+  padding: 0;
+  border: 0;
+  background: transparent;
   cursor: pointer;
 }
 
 .nav-toggle span {
   display: block;
-  width: 20px;
+  width: 28px;
   height: 2px;
-  margin: 3px 0;
+  margin: 4px 0;
   background: var(--primary);
+  border-radius: 999px;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.nav-toggle:hover span,
+.nav-toggle:focus-visible span {
+  background: var(--primary-deep);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 6px;
 }
 
 .hero {
@@ -433,6 +447,222 @@ h1 {
   background: var(--primary);
 }
 
+.portfolio-preview-section,
+.visual-gallery-section {
+  background: var(--soft);
+}
+
+.portfolio-feature {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.58fr) minmax(0, 1fr);
+  gap: clamp(26px, 5vw, 58px);
+  align-items: center;
+}
+
+.portfolio-feature-copy,
+.case-study-copy {
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.project-label {
+  margin-bottom: 8px;
+  color: var(--primary-deep);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.portfolio-feature h3 {
+  margin-bottom: 14px;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.08;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.project-tags span {
+  padding: 9px 12px;
+  color: var(--primary-dark);
+  background: rgba(145, 179, 255, 0.2);
+  border: 1px solid rgba(49, 95, 191, 0.22);
+  border-radius: 6px;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.project-actions,
+.next-project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.portfolio-image-link,
+.portfolio-hero-media,
+.portfolio-gallery figure {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.portfolio-image-link {
+  display: block;
+}
+
+.portfolio-image-link img,
+.portfolio-hero-media img,
+.portfolio-gallery img {
+  width: 100%;
+  height: 100%;
+  filter: contrast(1.16) saturate(1.08);
+  object-fit: cover;
+}
+
+.portfolio-hero-media img {
+  object-fit: contain;
+}
+
+.portfolio-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.65fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(58px, 8vw, 108px) clamp(20px, 5vw, 72px);
+  background:
+    linear-gradient(105deg, rgba(251, 250, 246, 0.97) 0%, rgba(251, 250, 246, 0.88) 48%, rgba(145, 179, 255, 0.22) 100%),
+    var(--soft);
+}
+
+.portfolio-hero-copy {
+  max-width: 720px;
+}
+
+.portfolio-hero-media {
+  aspect-ratio: 16 / 10;
+}
+
+.case-study-section {
+  background: var(--paper);
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.36fr) minmax(0, 1fr);
+  gap: clamp(30px, 5vw, 70px);
+  align-items: start;
+}
+
+.project-summary {
+  display: grid;
+  gap: 22px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(30, 28, 22, 0.08);
+}
+
+.project-summary div {
+  display: grid;
+  gap: 5px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-summary div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.project-summary span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.project-summary strong,
+.project-summary a {
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.project-summary a {
+  color: var(--primary-deep);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.case-study-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.case-study-points article {
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.case-study-points h3 {
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+  font-size: 1.05rem;
+}
+
+.case-study-points p {
+  margin-bottom: 0;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.34fr);
+  gap: clamp(20px, 4vw, 38px);
+  align-items: start;
+}
+
+.portfolio-gallery figure {
+  margin: 0;
+}
+
+.gallery-desktop img {
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-mobile {
+  max-width: 360px;
+}
+
+.gallery-mobile img {
+  aspect-ratio: 9 / 16;
+  object-position: top;
+}
+
+.portfolio-gallery figcaption {
+  padding: 12px 16px 15px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.next-project-section {
+  background: var(--paper);
+}
+
 .faq-section {
   background: var(--paper);
 }
@@ -636,6 +866,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  min-width: 0;
 }
 
 .footer-top img {
@@ -645,11 +876,11 @@ h1 {
 
 .footer-nav {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px 38px;
-  white-space: nowrap;
-  padding-right: 40px;
+  min-width: 0;
+  padding-right: 0;
 }
 
 .footer-nav a {
@@ -677,6 +908,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 24px;
+  min-width: 0;
 }
 
 .footer-contact a {
@@ -688,7 +920,10 @@ h1 {
   .hero,
   .about-layout,
   .consultation-layout,
-  .contact-layout {
+  .contact-layout,
+  .portfolio-feature,
+  .portfolio-hero,
+  .case-study-grid {
     grid-template-columns: 1fr;
   }
 
@@ -703,6 +938,15 @@ h1 {
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .case-study-points,
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-mobile {
+    max-width: 420px;
+  }
 }
 
 @media (max-width: 860px) {
@@ -714,7 +958,6 @@ h1 {
   .footer-nav {
     order: -1;
     justify-content: flex-start;
-    padding-right: 0;
   }
 }
 
@@ -781,7 +1024,9 @@ h1 {
   }
 
   .hero-actions,
-  .about-points {
+  .about-points,
+  .project-actions,
+  .next-project-actions {
     align-items: stretch;
     flex-direction: column;
   }
