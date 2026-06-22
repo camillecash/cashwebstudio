@@ -87,7 +87,7 @@
           </div>
           <div>
             <span>Due date</span>
-            <strong>July 15, 2026</strong>
+            <strong id="invoice-due-date">Due in 14 days</strong>
           </div>
           <div class="invoice-amount-row">
             <span>Amount due</span>
@@ -98,12 +98,12 @@
         <fieldset class="invoice-payment-methods">
           <legend>Choose a payment method</legend>
           <div class="invoice-method-options">
-            <button type="button" data-method="Card">
+            <button type="button" data-method="Card" aria-pressed="false">
               <strong>Card</strong>
               <small>Credit, debit, Apple Pay, or Google Pay</small>
             </button>
-            <button type="button" data-method="ACH bank transfer">
-              <strong>ACH bank transfer</strong>
+            <button type="button" data-method="ACH Direct Debit" aria-pressed="false">
+              <strong>ACH Direct Debit</strong>
               <small>Pay securely from a U.S. bank account</small>
             </button>
           </div>

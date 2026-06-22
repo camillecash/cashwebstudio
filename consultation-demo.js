@@ -9,6 +9,26 @@ const dateInputWrap = dateInput.closest(".date-input-wrap");
 const dateInputDisplay = dateInputWrap.querySelector(".date-input-placeholder");
 
 let selectedTime = "";
+const defaultDemoMessage = "Prototype only. No appointment or payment will be submitted.";
+
+function resetDemoMessage() {
+  demoMessage.textContent = defaultDemoMessage;
+}
+
+function formatDateForInput(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function resetSelectedTime() {
+  selectedTime = "";
+  timeButtons.forEach((button) => {
+    button.classList.remove("is-selected");
+    button.setAttribute("aria-pressed", "false");
+  });
+}
 
 function updateDateInputAppearance() {
   dateInputWrap.classList.toggle("is-empty", !dateInput.value);
@@ -31,7 +51,8 @@ function formatSelectedDate(value) {
 function updateBookingState() {
   const formattedDate = formatSelectedDate(dateInput.value);
   const hasValidEmail = emailInput.validity.valid && emailInput.value.trim();
-  const isReady = formattedDate && selectedTime && nameInput.value.trim() && hasValidEmail;
+  const hasValidDate = formattedDate && dateInput.validity.valid;
+  const isReady = hasValidDate && selectedTime && nameInput.value.trim() && hasValidEmail;
 
   selection.textContent = formattedDate && selectedTime
     ? `${formattedDate} at ${selectedTime}`
@@ -41,9 +62,14 @@ function updateBookingState() {
 
 timeButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    timeButtons.forEach((item) => item.classList.remove("is-selected"));
+    timeButtons.forEach((item) => {
+      item.classList.remove("is-selected");
+      item.setAttribute("aria-pressed", "false");
+    });
     button.classList.add("is-selected");
+    button.setAttribute("aria-pressed", "true");
     selectedTime = button.dataset.time;
+    resetDemoMessage();
     updateBookingState();
   });
 });
@@ -61,7 +87,12 @@ dateInput.addEventListener("blur", () => {
   updateDateInputAppearance();
 });
 
-dateInput.addEventListener("change", updateDateInputAppearance);
+dateInput.addEventListener("change", () => {
+  resetSelectedTime();
+  resetDemoMessage();
+  updateDateInputAppearance();
+  updateBookingState();
+});
 dateInput.addEventListener("input", updateDateInputAppearance);
 
 dateInputWrap.addEventListener("click", (event) => {
@@ -75,6 +106,9 @@ dateInputWrap.addEventListener("click", (event) => {
   }
 });
 
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+dateInput.min = formatDateForInput(today);
 updateDateInputAppearance();
 
 checkoutButton.addEventListener("click", () => {
