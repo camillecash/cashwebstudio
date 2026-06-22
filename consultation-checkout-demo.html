@@ -74,7 +74,10 @@
         </div>
         <label class="booking-date-label">
           Date
-          <input id="consultation-date" type="date">
+          <span class="date-input-wrap is-empty">
+            <input id="consultation-date" type="date" required aria-label="Consultation date">
+            <span class="date-input-placeholder" aria-hidden="true">Select a date</span>
+          </span>
         </label>
         <div class="time-options" aria-label="Available consultation times">
           <button type="button" data-time="10:00 AM">10:00 AM</button>

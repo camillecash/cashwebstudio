@@ -5,8 +5,13 @@ const emailInput = document.querySelector("#consultation-email");
 const selection = document.querySelector("#consultation-selection");
 const checkoutButton = document.querySelector("#consultation-checkout-button");
 const demoMessage = document.querySelector("#consultation-demo-message");
+const dateInputWrap = dateInput.closest(".date-input-wrap");
 
 let selectedTime = "";
+
+function updateDateInputAppearance() {
+  dateInputWrap.classList.toggle("is-empty", !dateInput.value);
+}
 
 function formatSelectedDate(value) {
   if (!value) return "";
@@ -42,6 +47,18 @@ timeButtons.forEach((button) => {
 [dateInput, nameInput, emailInput].forEach((input) => {
   input.addEventListener("input", updateBookingState);
 });
+
+dateInput.addEventListener("focus", () => {
+  dateInputWrap.classList.add("is-focused");
+});
+
+dateInput.addEventListener("blur", () => {
+  dateInputWrap.classList.remove("is-focused");
+  updateDateInputAppearance();
+});
+
+dateInput.addEventListener("change", updateDateInputAppearance);
+updateDateInputAppearance();
 
 checkoutButton.addEventListener("click", () => {
   demoMessage.textContent = "Demo complete: a live build would now open Stripe Checkout and reserve the selected time.";
