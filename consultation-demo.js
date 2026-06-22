@@ -93,6 +93,7 @@ dateInput.addEventListener("change", () => {
 
   if (dateInput.value && dateInput.value < dateInput.min) {
     dateInput.value = "";
+    resetDemoMessage();
     dateInputError.hidden = false;
     dateInput.setAttribute("aria-invalid", "true");
     updateDateInputAppearance();
