@@ -63,6 +63,18 @@ dateInput.addEventListener("blur", () => {
 
 dateInput.addEventListener("change", updateDateInputAppearance);
 dateInput.addEventListener("input", updateDateInputAppearance);
+
+dateInputWrap.addEventListener("click", (event) => {
+  if (typeof dateInput.showPicker !== "function") return;
+
+  event.preventDefault();
+  try {
+    dateInput.showPicker();
+  } catch (error) {
+    dateInput.focus();
+  }
+});
+
 updateDateInputAppearance();
 
 checkoutButton.addEventListener("click", () => {
