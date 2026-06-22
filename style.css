@@ -558,9 +558,25 @@ h1 {
   --primary: #94c5ad;
   --primary-deep: #3f7e68;
   --primary-dark: #1e4d40;
+  accent-color: var(--primary-deep);
   background:
     linear-gradient(130deg, rgba(251, 250, 246, 0.98) 0%, rgba(251, 250, 246, 0.9) 48%, rgba(148, 197, 173, 0.3) 100%),
     var(--soft);
+}
+
+.brightmere-demo-page ::selection {
+  color: var(--ink);
+  background: rgba(148, 197, 173, 0.48);
+}
+
+.brightmere-demo-page input:-webkit-autofill,
+.brightmere-demo-page input:-webkit-autofill:hover,
+.brightmere-demo-page input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--ink);
+  caret-color: var(--ink);
+  -webkit-box-shadow: 0 0 0 1000px #f7fbf8 inset;
+  box-shadow: 0 0 0 1000px #f7fbf8 inset;
+  border-color: var(--primary-deep);
 }
 
 .concept-brand {
@@ -616,6 +632,63 @@ h1 {
 .brightmere-demo-page .invoice-found-status {
   background: rgba(148, 197, 173, 0.2);
   border-color: rgba(63, 126, 104, 0.26);
+}
+
+.brightmere-demo-page .button {
+  box-shadow: 0 10px 22px rgba(30, 77, 64, 0.14);
+}
+
+.brightmere-demo-page .button-dark:hover,
+.brightmere-demo-page .button-dark:focus-visible {
+  background: #123a30;
+  box-shadow: 0 16px 30px rgba(30, 77, 64, 0.22);
+}
+
+.brightmere-demo-page .invoice-lookup-form input,
+.brightmere-demo-page .booking-date-label input,
+.brightmere-demo-page .booking-fields input,
+.brightmere-demo-page .stripe-checkout-preview {
+  background: #f7fbf8;
+  border-color: rgba(63, 126, 104, 0.3);
+}
+
+.brightmere-demo-page .invoice-lookup-form input:focus,
+.brightmere-demo-page .booking-date-label input:focus,
+.brightmere-demo-page .booking-fields input:focus {
+  outline: none;
+  border-color: var(--primary-deep);
+  box-shadow: 0 0 0 3px rgba(148, 197, 173, 0.24);
+}
+
+.brightmere-demo-page .invoice-method-options button,
+.brightmere-demo-page .time-options button {
+  color: var(--primary-dark);
+  background: #f7fbf8;
+  border-color: rgba(63, 126, 104, 0.32);
+}
+
+.brightmere-demo-page .invoice-method-options button:hover,
+.brightmere-demo-page .invoice-method-options button:focus-visible,
+.brightmere-demo-page .invoice-method-options button.is-selected {
+  color: var(--primary-dark);
+  background: rgba(148, 197, 173, 0.22);
+  border-color: var(--primary-deep);
+  outline-color: var(--primary-deep);
+}
+
+.brightmere-demo-page .time-options button:hover,
+.brightmere-demo-page .time-options button:focus-visible,
+.brightmere-demo-page .time-options button.is-selected {
+  color: var(--white);
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  outline-color: var(--primary-deep);
+}
+
+.brightmere-demo-page .invoice-result > .button:disabled,
+.brightmere-demo-page .consultation-booking-card > .button:disabled {
+  color: rgba(255, 255, 255, 0.76);
+  background: #6f8f82;
 }
 
 .consultation-checkout {
