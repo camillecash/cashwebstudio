@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Interactive invoice checkout prototype by Cash Web Studio.">
+  <title>Invoice Checkout Demo | Cash Web Studio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="payment-page invoice-demo-page">
+  <header class="payment-header">
+    <a class="payment-brand" href="index.html#home" aria-label="Cash Web Studio home">
+      <img src="assets/logo-horizontal-black.svg" alt="Cash Web Studio">
+    </a>
+    <span class="prototype-label">Interactive prototype</span>
+  </header>
+
+  <main class="payment-main invoice-demo-main">
+    <section class="payment-intro" aria-labelledby="invoice-demo-title">
+      <p class="eyebrow">Secure invoice checkout</p>
+      <h1 id="invoice-demo-title">Find and pay your invoice.</h1>
+      <p>
+        Enter the email address associated with your project to view an open
+        balance and continue to secure payment through Stripe.
+      </p>
+      <div class="payment-trust-list" aria-label="Accepted payment methods">
+        <span>Card</span>
+        <span>ACH</span>
+        <span>Apple Pay</span>
+        <span>Google Pay</span>
+      </div>
+      <p class="invoice-security-note">
+        A production version would verify access before returning private invoice details.
+      </p>
+    </section>
+
+    <section class="payment-card invoice-demo-card" aria-label="Invoice checkout prototype">
+      <div class="payment-card-header">
+        <div>
+          <span>Invoice access</span>
+          <strong>Secure lookup</strong>
+        </div>
+        <p>Powered by Stripe</p>
+      </div>
+
+      <form id="invoice-lookup-form" class="invoice-lookup-form">
+        <label>
+          Billing email
+          <input id="invoice-email" type="email" autocomplete="email" placeholder="client@example.com" required>
+        </label>
+        <button class="button button-dark" type="submit">Find My Invoice</button>
+      </form>
+
+      <div id="invoice-result" class="invoice-result" hidden>
+        <div class="invoice-found-status">
+          <span aria-hidden="true">✓</span>
+          <div>
+            <strong>Open invoice found</strong>
+            <small id="invoice-email-display">client@example.com</small>
+          </div>
+        </div>
+
+        <div class="payment-summary">
+          <div>
+            <span>Invoice</span>
+            <strong>CWS-0001</strong>
+          </div>
+          <div>
+            <span>Client</span>
+            <strong>Jordan Lee</strong>
+          </div>
+          <div>
+            <span>Project</span>
+            <strong>Website design deposit</strong>
+          </div>
+          <div>
+            <span>Due date</span>
+            <strong>July 15, 2026</strong>
+          </div>
+          <div class="invoice-amount-row">
+            <span>Amount due</span>
+            <strong>$1,000.00</strong>
+          </div>
+        </div>
+
+        <fieldset class="invoice-payment-methods">
+          <legend>Choose a payment method</legend>
+          <div class="invoice-method-options">
+            <button type="button" data-method="Card">
+              <strong>Card</strong>
+              <small>Credit, debit, Apple Pay, or Google Pay</small>
+            </button>
+            <button type="button" data-method="ACH bank transfer">
+              <strong>ACH bank transfer</strong>
+              <small>Pay securely from a U.S. bank account</small>
+            </button>
+          </div>
+        </fieldset>
+
+        <div class="invoice-checkout-summary">
+          <span>Selected payment method</span>
+          <strong id="invoice-method-selection">Choose a payment method</strong>
+        </div>
+
+        <button id="invoice-pay-button" class="button button-dark" type="button" disabled>
+          Pay $1,000 Securely
+        </button>
+      </div>
+
+      <p id="invoice-demo-message" class="payment-note" aria-live="polite">
+        Prototype only. No invoice lookup or payment will be submitted.
+      </p>
+    </section>
+  </main>
+
+  <script src="invoice-demo.js"></script>
+</body>
+</html>

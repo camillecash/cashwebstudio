@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Interactive consultation checkout prototype by Cash Web Studio.">
+  <title>Consultation Checkout Demo | Cash Web Studio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="payment-page consultation-demo-page">
+  <header class="payment-header">
+    <a class="payment-brand" href="index.html#home" aria-label="Cash Web Studio home">
+      <img src="assets/logo-horizontal-black.svg" alt="Cash Web Studio">
+    </a>
+    <span class="prototype-label">Interactive prototype</span>
+  </header>
+
+  <main class="consultation-checkout">
+    <section class="consultation-service" aria-labelledby="consultation-title">
+      <p class="eyebrow">Consultation checkout</p>
+      <h1 id="consultation-title">Website Strategy Consultation</h1>
+      <p class="consultation-lead">
+        A focused one-on-one session to review your website goals, audience,
+        messaging, functionality, and next steps.
+      </p>
+
+      <div class="consultation-meta" aria-label="Consultation details">
+        <div>
+          <span>Duration</span>
+          <strong>60 minutes</strong>
+        </div>
+        <div>
+          <span>Format</span>
+          <strong>Video call</strong>
+        </div>
+        <div>
+          <span>Price</span>
+          <strong>$150.00</strong>
+        </div>
+      </div>
+
+      <div class="consultation-includes">
+        <h2>What’s included</h2>
+        <ul>
+          <li>Review of your current website or project idea</li>
+          <li>Recommendations for structure, content, and functionality</li>
+          <li>Clear next steps and a post-call summary</li>
+        </ul>
+      </div>
+
+      <p class="consultation-policy">
+        Reschedule up to 24 hours before the appointment. Consultation fees are
+        non-refundable within 24 hours of the scheduled start time.
+      </p>
+    </section>
+
+    <section class="consultation-booking-card" aria-label="Book and pay for consultation">
+      <div class="booking-step">
+        <div class="booking-step-heading">
+          <span>1</span>
+          <h2>Select an appointment</h2>
+        </div>
+        <label class="booking-date-label">
+          Date
+          <input id="consultation-date" type="date">
+        </label>
+        <div class="time-options" aria-label="Available consultation times">
+          <button type="button" data-time="10:00 AM">10:00 AM</button>
+          <button type="button" data-time="1:00 PM">1:00 PM</button>
+          <button type="button" data-time="3:30 PM">3:30 PM</button>
+        </div>
+      </div>
+
+      <div class="booking-step">
+        <div class="booking-step-heading">
+          <span>2</span>
+          <h2>Your information</h2>
+        </div>
+        <div class="booking-fields">
+          <label>
+            Name
+            <input id="consultation-name" type="text" autocomplete="name" placeholder="Your name">
+          </label>
+          <label>
+            Email
+            <input id="consultation-email" type="email" autocomplete="email" placeholder="you@example.com">
+          </label>
+        </div>
+      </div>
+
+      <div class="booking-step">
+        <div class="booking-step-heading">
+          <span>3</span>
+          <h2>Secure payment</h2>
+        </div>
+        <div class="stripe-checkout-preview">
+          <div>
+            <span>Payment method</span>
+            <small>Card, ACH, Apple Pay, or Google Pay</small>
+          </div>
+          <strong>Powered by Stripe</strong>
+        </div>
+      </div>
+
+      <div class="booking-total">
+        <div>
+          <span>Consultation</span>
+          <strong>Website Strategy Consultation</strong>
+        </div>
+        <div>
+          <span>Appointment</span>
+          <strong id="consultation-selection">Select a date and time</strong>
+        </div>
+        <div class="booking-total-row">
+          <span>Total due today</span>
+          <strong>$150.00</strong>
+        </div>
+      </div>
+
+      <button id="consultation-checkout-button" class="button button-dark" type="button" disabled>
+        Pay $150 and Book
+      </button>
+      <p id="consultation-demo-message" class="payment-note" aria-live="polite">
+        Prototype only. No appointment or payment will be submitted.
+      </p>
+    </section>
+  </main>
+
+  <script src="consultation-demo.js"></script>
+</body>
+</html>
