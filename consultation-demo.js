@@ -7,6 +7,7 @@ const checkoutButton = document.querySelector("#consultation-checkout-button");
 const demoMessage = document.querySelector("#consultation-demo-message");
 const dateInputWrap = dateInput.closest(".date-input-wrap");
 const dateInputDisplay = dateInputWrap.querySelector(".date-input-placeholder");
+const dateInputError = document.querySelector("#consultation-date-error");
 
 let selectedTime = "";
 const defaultDemoMessage = "Prototype only. No appointment or payment will be submitted.";
@@ -92,12 +93,15 @@ dateInput.addEventListener("change", () => {
 
   if (dateInput.value && dateInput.value < dateInput.min) {
     dateInput.value = "";
-    demoMessage.textContent = "Please select today or a future date.";
+    dateInputError.hidden = false;
+    dateInput.setAttribute("aria-invalid", "true");
     updateDateInputAppearance();
     updateBookingState();
     return;
   }
 
+  dateInputError.hidden = true;
+  dateInput.removeAttribute("aria-invalid");
   resetDemoMessage();
   updateDateInputAppearance();
   updateBookingState();

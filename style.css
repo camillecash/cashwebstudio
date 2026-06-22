@@ -868,6 +868,12 @@ h1 {
   font-weight: 800;
 }
 
+.date-input-error {
+  color: #9f2f2f;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 .time-options {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
