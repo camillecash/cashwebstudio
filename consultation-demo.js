@@ -89,6 +89,15 @@ dateInput.addEventListener("blur", () => {
 
 dateInput.addEventListener("change", () => {
   resetSelectedTime();
+
+  if (dateInput.value && dateInput.value < dateInput.min) {
+    dateInput.value = "";
+    demoMessage.textContent = "Please select today or a future date.";
+    updateDateInputAppearance();
+    updateBookingState();
+    return;
+  }
+
   resetDemoMessage();
   updateDateInputAppearance();
   updateBookingState();
