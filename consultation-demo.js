@@ -6,11 +6,15 @@ const selection = document.querySelector("#consultation-selection");
 const checkoutButton = document.querySelector("#consultation-checkout-button");
 const demoMessage = document.querySelector("#consultation-demo-message");
 const dateInputWrap = dateInput.closest(".date-input-wrap");
+const dateInputDisplay = dateInputWrap.querySelector(".date-input-placeholder");
 
 let selectedTime = "";
 
 function updateDateInputAppearance() {
   dateInputWrap.classList.toggle("is-empty", !dateInput.value);
+  dateInputDisplay.textContent = dateInput.value
+    ? formatSelectedDate(dateInput.value)
+    : "Select a date";
 }
 
 function formatSelectedDate(value) {
@@ -58,6 +62,7 @@ dateInput.addEventListener("blur", () => {
 });
 
 dateInput.addEventListener("change", updateDateInputAppearance);
+dateInput.addEventListener("input", updateDateInputAppearance);
 updateDateInputAppearance();
 
 checkoutButton.addEventListener("click", () => {
