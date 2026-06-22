@@ -4,20 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Interactive invoice checkout prototype by Cash Web Studio.">
-  <title>Invoice Checkout Demo | Cash Web Studio</title>
+  <meta name="description" content="Interactive invoice checkout concept for the fictional Brightmere Strategy Studio.">
+  <title>Invoice Checkout Demo | Brightmere Strategy Studio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="payment-page invoice-demo-page">
+<body class="payment-page invoice-demo-page brightmere-demo-page">
   <header class="payment-header">
-    <a class="payment-brand" href="index.html#home" aria-label="Cash Web Studio home">
-      <img src="assets/logo-horizontal-black.svg" alt="Cash Web Studio">
-    </a>
-    <span class="prototype-label">Interactive prototype</span>
+    <div class="concept-brand" aria-label="Brightmere Strategy Studio">
+      <span class="concept-brand-mark" aria-hidden="true">B</span>
+      <div>
+        <strong>Brightmere</strong>
+        <small>Strategy Studio</small>
+      </div>
+    </div>
+    <div class="prototype-meta">
+      <span class="prototype-label">Fictional concept</span>
+      <a href="index.html#home">Designed by Cash Web Studio</a>
+    </div>
   </header>
 
   <main class="payment-main invoice-demo-main">
@@ -68,7 +75,7 @@
         <div class="payment-summary">
           <div>
             <span>Invoice</span>
-            <strong>CWS-0001</strong>
+            <strong>BSS-2048</strong>
           </div>
           <div>
             <span>Client</span>
@@ -76,7 +83,7 @@
           </div>
           <div>
             <span>Project</span>
-            <strong>Website design deposit</strong>
+            <strong>Quarterly strategy engagement</strong>
           </div>
           <div>
             <span>Due date</span>
@@ -84,7 +91,7 @@
           </div>
           <div class="invoice-amount-row">
             <span>Amount due</span>
-            <strong>$1,000.00</strong>
+            <strong>$1,800.00</strong>
           </div>
         </div>
 
@@ -108,7 +115,7 @@
         </div>
 
         <button id="invoice-pay-button" class="button button-dark" type="button" disabled>
-          Pay $1,000 Securely
+          Pay $1,800 Securely
         </button>
       </div>
 

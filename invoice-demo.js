@@ -31,5 +31,5 @@ methodButtons.forEach((button) => {
 });
 
 payButton.addEventListener("click", () => {
-  demoMessage.textContent = "Demo complete: a live build would now open Stripe Checkout for invoice CWS-0001.";
+  demoMessage.textContent = "Demo complete: a live build would now open Stripe Checkout for invoice BSS-2048.";
 });

@@ -4,29 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Interactive consultation checkout prototype by Cash Web Studio.">
-  <title>Consultation Checkout Demo | Cash Web Studio</title>
+  <meta name="description" content="Interactive consultation checkout concept for the fictional Brightmere Strategy Studio.">
+  <title>Consultation Checkout Demo | Brightmere Strategy Studio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="payment-page consultation-demo-page">
+<body class="payment-page consultation-demo-page brightmere-demo-page">
   <header class="payment-header">
-    <a class="payment-brand" href="index.html#home" aria-label="Cash Web Studio home">
-      <img src="assets/logo-horizontal-black.svg" alt="Cash Web Studio">
-    </a>
-    <span class="prototype-label">Interactive prototype</span>
+    <div class="concept-brand" aria-label="Brightmere Strategy Studio">
+      <span class="concept-brand-mark" aria-hidden="true">B</span>
+      <div>
+        <strong>Brightmere</strong>
+        <small>Strategy Studio</small>
+      </div>
+    </div>
+    <div class="prototype-meta">
+      <span class="prototype-label">Fictional concept</span>
+      <a href="index.html#home">Designed by Cash Web Studio</a>
+    </div>
   </header>
 
   <main class="consultation-checkout">
     <section class="consultation-service" aria-labelledby="consultation-title">
       <p class="eyebrow">Consultation checkout</p>
-      <h1 id="consultation-title">Website Strategy Consultation</h1>
+      <h1 id="consultation-title">Business Clarity Consultation</h1>
       <p class="consultation-lead">
-        A focused one-on-one session to review your website goals, audience,
-        messaging, functionality, and next steps.
+        A focused one-on-one session to clarify your business positioning,
+        priorities, offers, and next-stage growth plan.
       </p>
 
       <div class="consultation-meta" aria-label="Consultation details">
@@ -40,16 +47,16 @@
         </div>
         <div>
           <span>Price</span>
-          <strong>$150.00</strong>
+          <strong>$225.00</strong>
         </div>
       </div>
 
       <div class="consultation-includes">
         <h2>What’s included</h2>
         <ul>
-          <li>Review of your current website or project idea</li>
-          <li>Recommendations for structure, content, and functionality</li>
-          <li>Clear next steps and a post-call summary</li>
+          <li>Review of your current goals, offers, and business challenges</li>
+          <li>Recommendations for positioning, priorities, and next steps</li>
+          <li>A concise post-call action summary</li>
         </ul>
       </div>
 
@@ -110,7 +117,7 @@
       <div class="booking-total">
         <div>
           <span>Consultation</span>
-          <strong>Website Strategy Consultation</strong>
+          <strong>Business Clarity Consultation</strong>
         </div>
         <div>
           <span>Appointment</span>
@@ -118,12 +125,12 @@
         </div>
         <div class="booking-total-row">
           <span>Total due today</span>
-          <strong>$150.00</strong>
+          <strong>$225.00</strong>
         </div>
       </div>
 
       <button id="consultation-checkout-button" class="button button-dark" type="button" disabled>
-        Pay $150 and Book
+        Pay $225 and Book
       </button>
       <p id="consultation-demo-message" class="payment-note" aria-live="polite">
         Prototype only. No appointment or payment will be submitted.
