@@ -806,6 +806,7 @@ h1 {
 .booking-date-label,
 .booking-fields label {
   display: grid;
+  min-width: 0;
   gap: 7px;
   color: var(--ink);
   font-size: 0.9rem;
@@ -831,10 +832,14 @@ h1 {
   width: 100%;
   min-width: 0;
   max-width: 100%;
+  overflow: hidden;
 }
 
 .date-input-wrap input {
   display: block;
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
 }
 
 .date-input-placeholder {
@@ -1822,6 +1827,28 @@ h1 {
 
   .consultation-checkout {
     padding: 36px 20px 54px;
+  }
+
+  .consultation-booking-card,
+  .booking-step,
+  .booking-date-label,
+  .date-input-wrap {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .booking-date-label input[type="date"] {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    inline-size: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .booking-date-label input[type="date"]::-webkit-date-and-time-value {
+    min-width: 0;
+    text-align: left;
   }
 
   .consultation-meta,
