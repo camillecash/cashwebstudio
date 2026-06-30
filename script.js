@@ -5,6 +5,8 @@ const sectionIds = ["services", "portfolio", "about", "faq", "consultation", "co
 const sectionRoutes = ["services", "about", "faq", "consultation", "contact"];
 const pathParts = window.location.pathname.split("/").filter(Boolean);
 const currentPage = pathParts[pathParts.length - 1] || "home";
+let pendingSectionTarget = "";
+let pendingSectionTimer = 0;
 
 const getNavTarget = (link) => {
   const url = new URL(link.getAttribute("href"), window.location.href);
@@ -21,7 +23,7 @@ const getHeaderOffset = () => {
   const siteHeader = document.querySelector(".site-header");
   const headerHeight = siteHeader ? siteHeader.offsetHeight : 86;
 
-  return headerHeight + 12;
+  return headerHeight;
 };
 
 const scrollToSection = (targetId) => {
@@ -30,6 +32,12 @@ const scrollToSection = (targetId) => {
   if (!section) {
     return;
   }
+
+  pendingSectionTarget = targetId;
+  window.clearTimeout(pendingSectionTimer);
+  pendingSectionTimer = window.setTimeout(() => {
+    pendingSectionTarget = "";
+  }, 900);
 
   const top = window.pageYOffset + section.getBoundingClientRect().top - getHeaderOffset();
   window.scrollTo({ top, behavior: "smooth" });
@@ -104,10 +112,20 @@ const trackHomepageSections = () => {
 
   const updateActiveSection = () => {
     const activationLine = getHeaderOffset();
-    const activeSection = sections.reduce((current, section) => {
-      const top = section.getBoundingClientRect().top - activationLine;
 
-      if (top <= 0) {
+    if (pendingSectionTarget) {
+      setActiveNavLink(pendingSectionTarget);
+      return;
+    }
+
+    const activeSection = sections.reduce((current, section) => {
+      const rect = section.getBoundingClientRect();
+      const currentDistance = current
+        ? Math.abs(current.getBoundingClientRect().top - activationLine)
+        : Infinity;
+      const sectionDistance = Math.abs(rect.top - activationLine);
+
+      if (rect.bottom >= activationLine && sectionDistance < currentDistance) {
         return section;
       }
 
@@ -153,7 +171,12 @@ const trackHomepageSections = () => {
     if (sectionRoutes.includes(target)) {
       setActiveNavLink(target);
       scrollToSection(target);
+      return;
     }
+
+    pendingSectionTarget = "";
+    window.clearTimeout(pendingSectionTimer);
+    updateActiveSection();
   });
 };
 
