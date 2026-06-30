@@ -8,6 +8,15 @@ const currentPage = pathParts[pathParts.length - 1] || "home";
 let pendingSectionTarget = "";
 let pendingSectionTimer = 0;
 
+const heroSection = document.querySelector(".hero, .portfolio-hero");
+
+if (heroSection) {
+  heroSection.classList.add("is-reveal-ready");
+  window.requestAnimationFrame(() => {
+    heroSection.classList.add("is-visible");
+  });
+}
+
 const getNavTarget = (link) => {
   const url = new URL(link.getAttribute("href"), window.location.href);
   const parts = url.pathname.split("/").filter(Boolean);
@@ -184,6 +193,30 @@ if (currentPage === "portfolio") {
   setActiveNavLink("portfolio");
 } else {
   trackHomepageSections();
+}
+
+const aboutSection = document.querySelector(".about-section");
+
+if (aboutSection && "IntersectionObserver" in window) {
+  aboutSection.classList.add("is-reveal-ready");
+
+  const aboutObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      aboutSection.classList.add("is-visible");
+      observer.unobserve(aboutSection);
+    });
+  }, {
+    threshold: 0.24,
+    rootMargin: "0px 0px -12% 0px"
+  });
+
+  aboutObserver.observe(aboutSection);
+} else if (aboutSection) {
+  aboutSection.classList.add("is-visible");
 }
 
 document.querySelectorAll(".website-reel-card").forEach((reel) => {
