@@ -1,16 +1,38 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = siteNav ? Array.from(siteNav.querySelectorAll("a")) : [];
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const sectionIds = ["services", "portfolio", "about", "faq", "consultation", "contact"];
+const sectionRoutes = ["services", "about", "faq", "consultation", "contact"];
+const pathParts = window.location.pathname.split("/").filter(Boolean);
+const currentPage = pathParts[pathParts.length - 1] || "home";
 
 const getNavTarget = (link) => {
   const url = new URL(link.getAttribute("href"), window.location.href);
+  const parts = url.pathname.split("/").filter(Boolean);
 
   if (url.hash) {
     return url.hash.slice(1);
   }
 
-  return url.pathname.split("/").pop().replace(".html", "");
+  return (parts[parts.length - 1] || "home").replace(".html", "");
+};
+
+const getHeaderOffset = () => {
+  const siteHeader = document.querySelector(".site-header");
+  const headerHeight = siteHeader ? siteHeader.offsetHeight : 86;
+
+  return headerHeight + 12;
+};
+
+const scrollToSection = (targetId) => {
+  const section = document.getElementById(targetId);
+
+  if (!section) {
+    return;
+  }
+
+  const top = window.pageYOffset + section.getBoundingClientRect().top - getHeaderOffset();
+  window.scrollTo({ top, behavior: "smooth" });
 };
 
 if (navToggle && siteNav) {
@@ -25,16 +47,30 @@ if (navToggle && siteNav) {
     if (link) {
       siteNav.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
-
-      const url = new URL(link.getAttribute("href"), window.location.href);
-      const isSamePageHash = url.hash && url.pathname === window.location.pathname;
-
-      if (isSamePageHash) {
-        setActiveNavLink(url.hash.slice(1));
-      }
     }
   });
 }
+
+document.addEventListener("click", (event) => {
+  const link = event.target instanceof Element ? event.target.closest("a") : null;
+
+  if (!link) {
+    return;
+  }
+
+  const url = new URL(link.getAttribute("href"), window.location.href);
+  const target = getNavTarget(link);
+  const isCleanSectionRoute = url.origin === window.location.origin && sectionRoutes.includes(target);
+
+  if (!isCleanSectionRoute || !document.getElementById(target)) {
+    return;
+  }
+
+  event.preventDefault();
+  history.pushState({ section: target }, "", `/${target}`);
+  setActiveNavLink(target);
+  scrollToSection(target);
+});
 
 const setActiveNavLink = (targetId) => {
   if (!siteNav) {
@@ -47,7 +83,7 @@ const setActiveNavLink = (targetId) => {
     const isMatch = linkTarget === targetId;
 
     if (isMatch) {
-      const currentType = currentPage === "portfolio.html" && targetId === "portfolio" && !url.hash
+      const currentType = currentPage === "portfolio" && targetId === "portfolio" && !url.hash
         ? "page"
         : "location";
       link.setAttribute("aria-current", currentType);
@@ -58,7 +94,6 @@ const setActiveNavLink = (targetId) => {
 };
 
 const trackHomepageSections = () => {
-  const sectionIds = ["services", "portfolio", "about", "faq", "consultation", "contact"];
   const sections = sectionIds
     .map((id) => document.getElementById(id))
     .filter(Boolean);
@@ -68,9 +103,7 @@ const trackHomepageSections = () => {
   }
 
   const updateActiveSection = () => {
-    const siteHeader = document.querySelector(".site-header");
-    const headerHeight = siteHeader ? siteHeader.offsetHeight : 86;
-    const activationLine = headerHeight + 12;
+    const activationLine = getHeaderOffset();
     const activeSection = sections.reduce((current, section) => {
       const top = section.getBoundingClientRect().top - activationLine;
 
@@ -90,7 +123,11 @@ const trackHomepageSections = () => {
   };
 
   updateActiveSection();
-  if (window.location.hash) {
+  if (sectionRoutes.includes(currentPage)) {
+    setActiveNavLink(currentPage);
+    window.setTimeout(() => scrollToSection(currentPage), 100);
+    window.setTimeout(updateActiveSection, 500);
+  } else if (window.location.hash) {
     const hashTarget = window.location.hash.slice(1);
 
     if (sectionIds.includes(hashTarget)) {
@@ -109,9 +146,18 @@ const trackHomepageSections = () => {
       window.setTimeout(updateActiveSection, 250);
     }
   });
+  window.addEventListener("popstate", () => {
+    const parts = window.location.pathname.split("/").filter(Boolean);
+    const target = parts[parts.length - 1] || "";
+
+    if (sectionRoutes.includes(target)) {
+      setActiveNavLink(target);
+      scrollToSection(target);
+    }
+  });
 };
 
-if (currentPage === "portfolio.html") {
+if (currentPage === "portfolio") {
   setActiveNavLink("portfolio");
 } else {
   trackHomepageSections();
