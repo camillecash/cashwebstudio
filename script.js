@@ -84,7 +84,7 @@ document.addEventListener("click", (event) => {
   }
 
   event.preventDefault();
-  history.pushState({ section: target }, "", `/${target}`);
+  history.pushState({ section: target }, "", `/${target}/`);
   setActiveNavLink(target);
   scrollToSection(target);
 });

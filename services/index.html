@@ -10,12 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <link rel="canonical" href="https://cashwebstudio.com/services">
+  <link rel="canonical" href="https://cashwebstudio.com/services/">
 
   <meta property="og:title" content="Cash Web Studio | Web Design & Development">
   <meta property="og:description" content="Strategic websites for brands ready to look sharp and work smarter.">
   <meta property="og:image" content="https://cashwebstudio.com/assets/cash-web-studio-social-preview.png">
-  <meta property="og:url" content="https://cashwebstudio.com/services">
+  <meta property="og:url" content="https://cashwebstudio.com/services/">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -98,12 +98,12 @@
       <span></span>
     </button>
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href="/services">Services</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/about">About</a>
-      <a href="/faq">FAQ</a>
-      <a href="/consultation">Consultation</a>
-      <a href="/contact">Contact</a>
+      <a href="/services/">Services</a>
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/about/">About</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/consultation/">Consultation</a>
+      <a href="/contact/">Contact</a>
     </nav>
   </header>
 
@@ -117,9 +117,9 @@
           clean development, and the technical polish needed to help your business grow online.
         </p>
         <div class="hero-actions">
-          <a class="button button-dark" href="/consultation">Schedule a Consultation</a>
-          <a class="button button-light" href="/services">View Services</a>
-          <a class="button button-light" href="/portfolio">View Portfolio</a>
+          <a class="button button-dark" href="/consultation/">Schedule a Consultation</a>
+          <a class="button button-light" href="/services/">View Services</a>
+          <a class="button button-light" href="/portfolio/">View Portfolio</a>
         </div>
       </div>
       <div class="hero-panel" aria-label="Cash Web Studio service highlights">
@@ -238,7 +238,7 @@
             </div>
           </article>
           <div class="portfolio-preview-actions">
-            <a class="button button-dark" href="/portfolio">View Full Portfolio</a>
+            <a class="button button-dark" href="/portfolio/">View Full Portfolio</a>
           </div>
         </div>
 
@@ -368,7 +368,7 @@
         <div class="consultation-copy">
           <div class="section-heading">
             <p class="eyebrow">Consultation</p>
-            <h2>Let’s talk through your website goals</h2>
+            <h2>Let’s talk through your website goals.</h2>
           </div>
           <p>
             Book a free consultation to discuss your brand, your audience, your timeline, and the kind of site that will best support your next move.
@@ -376,11 +376,21 @@
           <a class="button button-dark" href="mailto:info@cashwebstudio.com?subject=Cash%20Web%20Studio%20Consultation">Schedule by Email</a>
         </div>
         <div class="calendar-card">
-          <iframe
-            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1EmdxwlqDeLsrilBeNLkA18aZWTJdXxXFsZfzzmwj6zVzFVGHoUKlov2ddjU7TMXUpMQtEQNGY?gv=true" 
-            title="Schedule a consultation with Cash Web Studio" 
-            frameborder="0">
-          </iframe>
+          <div class="cal-inline-widget" id="my-cal-inline-meet-with-camille"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "meet-with-camille", { origin: "https://app.cal.com" });
+            Cal.config = Cal.config || {};
+            Cal.config.forwardQueryParams = true;
+
+            Cal.ns["meet-with-camille"]("inline", {
+              elementOrSelector: "#my-cal-inline-meet-with-camille",
+              config: { "layout": "month_view", "theme": "light", "useSlotsViewOnSmallScreen": "true" },
+              calLink: "camille-cash-dvcsgd/meet-with-camille",
+            });
+
+            Cal.ns["meet-with-camille"]("ui", { "theme": "light", "cssVarsPerTheme": { "light": { "cal-brand": "#91B3FF" }, "dark": { "cal-brand": "#91B3FF" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+          </script>
         </div>
       </div>
     </section>
@@ -467,12 +477,12 @@
       <img src="/assets/logo-horizontal-white.svg" alt="Cash Web Studio">
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="/">Home</a>
-        <a href="/services">Services</a>
-        <a href="/portfolio">Portfolio</a>
-        <a href="/about">About</a>
-        <a href="/faq">FAQ</a>
-        <a href="/consultation">Consultation</a>
-        <a href="/contact">Contact</a>
+        <a href="/services/">Services</a>
+        <a href="/portfolio/">Portfolio</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/consultation/">Consultation</a>
+        <a href="/contact/">Contact</a>
       </nav>
     </div>
     <div class="footer-contact" aria-label="Company contact information">
