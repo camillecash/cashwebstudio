@@ -238,3 +238,7 @@ document.querySelectorAll(".website-reel-card").forEach((reel) => {
   previousButton.addEventListener("click", () => showSlide(-1));
   nextButton.addEventListener("click", () => showSlide(1));
 });
+
+document.querySelectorAll("[data-current-year]").forEach((year) => {
+  year.textContent = String(new Date().getFullYear());
+});

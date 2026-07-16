@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore Cash Web Studio website projects and interactive concepts, including responsive portfolio, creative services, consultation checkout, and invoice payment experiences.">
-  <title>Portfolio | Cash Web Studio</title>
+  <meta name="description" content="Explore Cash Web Studio website projects and interactive concepts for portfolios, creative services, consultation booking, and invoice checkout experiences.">
+  <meta name="theme-color" content="#91b3ff">
+  <title>Website Portfolio | Cash Web Studio</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,16 +13,82 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="canonical" href="https://cashwebstudio.com/portfolio/">
 
-  <meta property="og:title" content="Portfolio | Cash Web Studio">
+  <meta property="og:title" content="Website Portfolio | Cash Web Studio">
   <meta property="og:description" content="Explore Cash Web Studio website projects and interactive website concepts.">
   <meta property="og:image" content="https://cashwebstudio.com/assets/portfolio-wcashdesign-desktop.jpg">
   <meta property="og:url" content="https://cashwebstudio.com/portfolio/">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Portfolio | Cash Web Studio">
+  <meta name="twitter:title" content="Website Portfolio | Cash Web Studio">
   <meta name="twitter:description" content="Explore Cash Web Studio website projects and interactive website concepts.">
   <meta name="twitter:image" content="https://cashwebstudio.com/assets/portfolio-wcashdesign-desktop.jpg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://cashwebstudio.com/portfolio/#page",
+          "url": "https://cashwebstudio.com/portfolio/",
+          "name": "Website Portfolio | Cash Web Studio",
+          "description": "Explore Cash Web Studio website projects and interactive website concepts.",
+          "isPartOf": {
+            "@id": "https://cashwebstudio.com/#website"
+          },
+          "about": {
+            "@id": "https://cashwebstudio.com/#business"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://cashwebstudio.com/portfolio/#projects",
+          "name": "Cash Web Studio portfolio projects",
+          "itemListElement": [
+            {
+              "@type": "CreativeWork",
+              "position": 1,
+              "name": "Jasmine J. Cash, PhD, CSCS",
+              "url": "https://jasminecash.com/",
+              "description": "Academic portfolio website designed and developed by Cash Web Studio."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 2,
+              "name": "WCashDesign",
+              "url": "https://wcashdesign.com/",
+              "description": "Creative services website designed and developed by Cash Web Studio."
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 3,
+              "name": "TeckyConsult Website Demo",
+              "url": "https://camillecash.github.io/Consultation-Services-Demo/",
+              "description": "Responsive consultation website concept by Cash Web Studio."
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cashwebstudio.com/portfolio/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://cashwebstudio.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Portfolio",
+              "item": "https://cashwebstudio.com/portfolio/"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -308,6 +375,7 @@
         </svg>
       </a>
     </div>
+    <p class="footer-copyright">&copy; <span data-current-year>2026</span> Cash Web Studio. All rights reserved.</p>
   </footer>
 
   <script src="/script.js"></script>

@@ -1146,6 +1146,21 @@ h1 {
   letter-spacing: 0;
 }
 
+.not-found-hero {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+  text-align: center;
+}
+
+.not-found-hero .hero-copy,
+.not-found-hero .hero-text {
+  margin-inline: auto;
+}
+
+.not-found-hero .hero-actions {
+  justify-content: center;
+}
+
 .about-layout,
 .consultation-layout,
 .contact-layout {
@@ -2570,6 +2585,12 @@ h1 {
   color: var(--primary);
   background: rgba(145, 179, 255, 0.14);
   border-color: rgba(145, 179, 255, 0.45);
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 @media (max-width: 1080px) {
