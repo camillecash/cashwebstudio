@@ -1,0 +1,22 @@
+# Cash Web Studio
+
+Cash Web Studio is a Cary, NC web design and development studio led by Camille Cash. The studio works with small businesses across the Triangle and beyond through remote web design and development.
+
+Local service areas include Cary, Raleigh, Durham, Chapel Hill, Apex, Morrisville, Holly Springs, Wake Forest, Garner, Knightdale, and surrounding Triangle communities. Cash Web Studio can also work with clients anywhere through remote web design and development.
+
+Cash Web Studio creates custom websites for entrepreneurs, small businesses, service providers, founders, and personal brands that need an online presence that feels credible, clear, and easy to maintain.
+
+Core services include custom web design, responsive website development, editable content management system setup, website hosting and maintenance, foundational SEO, AI search visibility support, and guidance sessions for clients working on platforms such as Squarespace, WordPress, and similar website tools.
+
+Primary contact information:
+- Email: info@cashwebstudio.com
+- Phone: (919) 694-3294
+- Website: https://cashwebstudio.com/
+
+Canonical pages:
+- Home: https://cashwebstudio.com/
+- Services: https://cashwebstudio.com/services/
+- Portfolio: https://cashwebstudio.com/portfolio/
+- About: https://cashwebstudio.com/about/
+- FAQ: https://cashwebstudio.com/faq/
+- Contact: https://cashwebstudio.com/contact/
