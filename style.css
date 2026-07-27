@@ -1154,6 +1154,10 @@ h1 {
   text-align: center;
 }
 
+.contact-local-band p {
+  max-width: 1160px;
+}
+
 .section {
   padding: clamp(68px, 9vw, 118px) clamp(20px, 5vw, 72px);
 }
@@ -3523,6 +3527,12 @@ h1 {
 .footer-contact a:hover,
 .footer-contact a:focus-visible {
   color: var(--primary);
+}
+
+.footer-location {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.92rem;
+  font-weight: 750;
 }
 
 .footer-social {
