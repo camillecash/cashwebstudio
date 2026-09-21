@@ -3553,6 +3553,10 @@ h1 {
   stroke-linejoin: round;
 }
 
+.social-icon--brand-outline {
+  stroke-width: 1.9;
+}
+
 .contact-form {
   display: grid;
   justify-self: end;
